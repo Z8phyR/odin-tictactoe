@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  --strike-color: rgb(254, 84, 62);
+}
+
+html {
+  background-color: darkslategrey;
+  color: cornsilk;
+}
+
+body {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+header {
+  font-size: 2em;
+  text-align: center;
+  margin: 20px;
+}
+
+footer {
+  text-align: center;
+  position: absolute;
+  bottom: 5px;
+}
+
+/* Game Area */
+.gamegrid {
+  margin-top: 25px;
+  display: grid;
+  position: relative;
+  grid-template: repeat(3, 100px) / repeat(3, 100px);
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+#gameover {
+  text-align: center;
+  border: 4px solid currentColor;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 20px;
+  font-size: 2rem;
+}
+#gameover p {
+  padding: 20px;
+}
+#gameover button {
+  background-color: transparent;
+  color: currentColor;
+  font-size: 1.5rem;
+  border: 3px solid currentColor;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+.border-right {
+  border-right: 3px solid currentColor;
+}
+.border-bottom {
+  border-bottom: 3px solid currentColor;
+}
+
+.hover-x:hover::after {
+  content: "X";
+  opacity: 0.3;
+  transition: 0.2s;
+}
+.hover-o:hover::after {
+  content: "O";
+  opacity: 0.3;
+}
+
+/*Strike Positions */
+/*Row*/
+.strike-row-1 {
+  position: absolute;
+  top: 16%;
+  width: 100%;
+  height: 5px;
+  background-color: var(--strike-color);
+}
+.strike-row-2 {
+  position: absolute;
+  top: 49%;
+  width: 100%;
+  height: 5px;
+  background-color: var(--strike-color);
+}
+.strike-row-3 {
+  position: absolute;
+  bottom: 16%;
+  width: 100%;
+  height: 5px;
+  background-color: var(--strike-color);
+}
+
+/*Columns*/
+.strike-col-1 {
+  position: absolute;
+  left: 16%;
+  height: 100%;
+  width: 5px;
+  background-color: var(--strike-color);
+}
+.strike-col-2 {
+  position: absolute;
+  left: 49%;
+  height: 100%;
+  width: 5px;
+  background-color: var(--strike-color);
+}
+.strike-col-3 {
+  position: absolute;
+  right: 16%;
+  height: 100%;
+  width: 5px;
+  background-color: var(--strike-color);
+}
+/*Diagonals*/
+.strike-diag-1 {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 5px;
+  background-color: var(--strike-color);
+  transform: rotate(45deg);
+}
+.strike-diag-2 {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 5px;
+  background-color: var(--strike-color);
+  transform: rotate(-45deg);
+}
