@@ -10,7 +10,6 @@ creating data structure for the win conditions
 
 implementing the winconditions into an object vis destructuring,
 
-
-
+[Preview the page](https://z8phyr.github.io/odin-tictactoe/)
 
 
